@@ -10,7 +10,12 @@ RUN add-apt-repository ppa:longsleep/golang-backports -y
 RUN apt-get update
 RUN apt-get install golang-go -y
 
-RUN ls
-RUN go get collidermain
+RUN export GOPATH=$HOME/goWorkspace && \
+    mkdir -p $GOPATH/src && \
+    ln -s `pwd`/apprtc/src/collider/collider $GOPATH/src && \
+    ln -s `pwd`/apprtc/src/collider/collidermain $GOPATH/src && \
+    ln -s `pwd`/apprtc/src/collider/collidertest $GOPATH/src && \
+    go get collidermain && \
+    go install collidermain
 
 RUN cd apprtc
