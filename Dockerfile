@@ -10,4 +10,7 @@ RUN add-apt-repository ppa:longsleep/golang-backports -y
 RUN apt-get update
 RUN apt-get install golang-go -y
 
+RUN ls
+RUN go get collidermain
+
 RUN cd apprtc
