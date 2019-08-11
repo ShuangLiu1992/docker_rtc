@@ -40,4 +40,4 @@ RUN apt-get install google-cloud-sdk-app-engine-python google-cloud-sdk-app-engi
 
 RUN apt-get install google-cloud-sdk-app-engine-python google-cloud-sdk-app-engine-python-extras google-cloud-sdk-datastore-emulator -y
 RUN apt-get install net-tools -y
-RUN dev_appserver.py apprtc/out/app_engine/ --host=192.168.1.203
+RUN dev_appserver.py apprtc/out/app_engine/ --host=192.168.1.203 # change the IP address accordingly
